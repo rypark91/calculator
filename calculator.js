@@ -9,6 +9,9 @@ var addButton = document.querySelector("#add");
 var subButton = document.querySelector("#sub");
 var multButton = document.querySelector("#mult");
 var diviButton = document.querySelector("#divi");
+var equalButton = document.querySelector("#equal");
+
+var decimalButton = document.querySelector("#dec");
 
 
 var operator = "";
@@ -40,6 +43,7 @@ addButton.addEventListener("click", function(){
     operator = "+";
     isNewNumber = true;
     calculateLock = true;
+    resetDecimal();
 });
 subButton.addEventListener("click", function(){
     if(prevNumber !== null && calculateLock === false){
@@ -52,6 +56,7 @@ subButton.addEventListener("click", function(){
     operator = "-";
     isNewNumber = true;
     calculateLock = true;
+    resetDecimal();
 });
 multButton.addEventListener("click", function(){
     if(prevNumber !== null && calculateLock === false){
@@ -63,6 +68,7 @@ multButton.addEventListener("click", function(){
     operator = "*";
     isNewNumber = true;
     calculateLock = true;
+    resetDecimal();
 });
 diviButton.addEventListener("click", function(){
     if(prevNumber !== null && calculateLock === false){
@@ -74,6 +80,29 @@ diviButton.addEventListener("click", function(){
     operator = "/";
     isNewNumber = true;
     calculateLock = true;
+    resetDecimal();
+});
+equalButton.addEventListener("click",function(){
+    if(operator !== ""){
+        calculate(operator, Number.parseFloat(screenBox.textContent));
+        prevNumber = null;
+        operator = "";
+        isNewNumber = true;
+        resetDecimal();
+    }
+});
+decimalButton.addEventListener("click",function(){
+    if(canAddDec){
+        if(isNewNumber){
+            screenBox.textContent = "0.";
+            isNewNumber = false;
+        }
+        else{
+            screenBox.textContent += ".";
+        }
+        canAddDec = false;
+    }
+    
 });
     
     
