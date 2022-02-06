@@ -1,6 +1,76 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+h1,p{
+    text-align: center;
+}
+
+#calculator{
+    border: black 1px solid;
+    border-radius: 10px;
+    width: 400px;
+    height: 500px;
+    background-color: rgb(131, 131, 131);
+    margin-left: 30px;
+
+}
 #screen{
     text-align: right;
-    width: 200px;
-    height: 20px;
+    width: 82%;
+    height: 40px;
     background-color: #aecfab;
+    margin: 10px auto;
+    font-size: 30px;
+}
+#row-2, #row-3, #row-4, #row-5, #row-6, #row-7{
+    width: 100%;
+    text-align: center;
+}
+button{
+    width: 20%;
+    height: 65px;
+    margin: 2px 1px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 20px;
+
+}
+.num, #zero, #posneg, #dec{
+    background-color: lightblue;
+}
+.num:hover, #zero:hover, #posneg:hover, #dec:hover{
+    background-color: lightskyblue;
+}
+.num:active, #zero:active, #posneg:active, #dec:active{
+    background-color: rgb(0, 157, 255);
+}
+#equal{
+    background-color: plum;
+}
+#equal:hover{
+    background-color: rgb(192, 92, 206);
+}
+#equal:active{
+    background-color: rgb(174, 0, 255);
+}
+
+@media (min-width: 340px) and (max-width: 500px){
+    #calculator{
+        width: 330px;
+        height: 400px;
+        background-color: rgb(131, 131, 131);
+        margin-left: 5px;
+    
+    }
+    #screen{
+        height: 30px;
+        font-size: 20px;
+    }
+    button{
+        height: 50px;
+        font-weight: 600;
+        font-size: 15px;
+    
+    }
 }
